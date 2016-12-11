@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>{{.title}}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/app.css">
+  <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+
+  {{range .moreStyles}}
+  <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+  {{end}}
+</head>
+<body>
+<nav class="navbar  navbar-fixed-top navbar-dark bg-inverse">
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+        <a class="navbar-brand" href="#">
+            <img src="/public/img/logo-sm.png" width="32" height="32" class="d-inline-block align-top" alt=""> Todo List
+        </a>
+        <ul class="nav navbar-nav nav-inline">
+            <li class="nav-item"><a class="nav-link" href="{{url "App.Index"}}">Homepage</a></li>
+        {{if .session.user}}
+            <li class="nav-item"><a class="nav-link" href="{{url "TodoList.Settings"}}">Settings</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url "App.Logout"}}">Logout</a></li>
+        {{end}}
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="template-starter">
+     {{template "flash.html" .}}
+        </div>
+

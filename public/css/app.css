@@ -1,0 +1,77 @@
+body {
+    padding-top: 2rem;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.main-lead{
+    padding: 1rem;
+}
+a.check > i{
+    color: #5cb85c;
+}
+a.check:hover > i{
+    color: #ffffff;
+}
+.add-new-task{
+    font-size: 1.3rem;
+}
+.form-group{
+    padding-bottom: 1rem;
+}
+.form-control{
+    margin-bottom: 1rem;
+}
+hr.login{
+    margin-top: -1rem !important;
+}
+hr.password-change{
+    margin-top: -1rem !important;
+}
+a.cancel{
+    margin-left: 1rem;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 160px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    /* Set the fixed height of the footer here */
+    height: 120px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+hr.hr-footer{
+    margin-top: -1rem;
+    border-width: 2px;
+    border-style: dashed;
+    color: #f0f0f0;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 60px 15px 0;
+
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top-color: #f0f0f0;
+    border-top-width: 10px !important;
+
+}

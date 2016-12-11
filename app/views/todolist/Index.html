@@ -1,0 +1,83 @@
+{{template "header.html" .}}
+{{set . "title" "Todo List" }}
+
+<div class="row">
+    <form method="POST" action="{{url "TodoList.Add"}}">
+    <div class="col-md-8 offset-md-2">
+        {{with $field := field "todolistitem.Value" .}}
+        <div class="form-group row">
+            <label for="value" class="col-xs-4 col-form-label"><strong>What do you want to do:</strong></label>
+            <div class="col-xs-8">
+                <input class="form-control" type="text"  name="{{$field.Name}}" value="{{$field.Flash}}" id="value">
+            </div>
+        </div>
+        {{end}}
+        {{with $field := field "todolistitem.ScheduledFormatted" .}}
+        <div class="form-group row">
+            <label for="scheduled" class="col-xs-4 col-form-label"><strong>When do you want to do it:</strong></label>
+            <div class="col-xs-8">
+                <input type="text" name="{{$field.Name}}" id="scheduled" class="form-control" value="{{$field.Flash}}" autocomplete="off">
+            </div>
+        </div>
+        {{end}}
+        <button type="submit" class="btn btn-block btn-success add-new-task">Add new task</button>
+        </form>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>What to do?</th>
+                <th>Scheduled</th>
+                <th>Done</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{range .uncompletedTasks}}
+            <tr>
+                <form method="POST" action="{{url "TodoList.Done" .ItemId}}">
+                    <th scope="row">{{.ItemId}}</th>
+                    <td>{{.Value}}</td>
+                    <td>{{.ScheduledFormatted}}</td>
+                    <td><button type="submit" class="btn btn-outline-success check"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+                </form>
+            </tr>
+            {{end}}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-hover">
+            <tmargin-bottomhead>
+            <tr>
+                <th>#</th>
+                <th>What is done?</th>
+                <th>Completed</th>
+                <th>Delete</th>
+            </tr>
+            </tmargin-bottomhead>
+            <tbody>
+            {{range .completedTasks}}
+            <tr>
+                <form method="POST" action="{{url "TodoList.Delete" .ItemId}}">
+                    <th scope="row">{{.ItemId}}</th>
+                    <td>{{.Value}}</td>
+                    <td>{{.CompletionFormatted}}</td>
+                    <td><button type="submit" class="btn btn-outline-danger delete"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </form>
+            </tr>
+            {{end}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{template "footer.html" .}}
+<script>
+    jQuery('#scheduled').datetimepicker({
+        format:'Y-m-d H:i'
+    });
+</script>

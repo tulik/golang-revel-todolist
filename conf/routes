@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                                       App.Index
+GET     /list                                   TodoList.Index
+POST    /list/add                               TodoList.Add
+POST    /list/delete                            TodoList.Delete
+GET     /register                               App.Register
+POST    /register                               App.SaveUser
+GET     /settings                               TodoList.Settings
+POST    /settings                               TodoList.SaveSettings
+POST    /login                                  App.Login
+GET     /logout                                 App.Logout
+GET     /favicon.ico                            Static.Serve("public/img","favicon.png")
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/*filepath                       Static.Serve("public")
+
+# Catch all
+*       /:controller/:action                    :controller.:action
