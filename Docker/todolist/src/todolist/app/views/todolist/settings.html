@@ -1,0 +1,40 @@
+{{set . "title" "Settings"}}
+{{template "header.html" .}}
+
+<form method="POST" action="{{url "TodoList.SaveSettings"}}">
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">Change your password</div>
+            <div class="card-block">
+                <form action="{{url "App.Login"}}" id="formLogin" method="POST">
+                {{with $field := field "password" .}}
+                <div class="form-group">
+                    <label for="password" class="col-xs-4 form-label"><strong>New password:</strong></label>
+                    <div class="col-xs-8">
+                        <input class="form-control" type="password" name="{{$field.Name}}"  id="password" />
+                    </div>
+                </div>
+                {{end}}
+                {{with $field := field "verifyPassword" .}}
+                <div class="form-group">
+                    <label for="verify-password" class="col-xs-4 form-label"><strong>Repeat password:</strong></label>
+                    <div class="col-xs-8">
+                        <input class="form-control" type="password" name="{{$field.Name}}" id="verify-password"/>
+                    </div>
+                </div>
+                {{end}}
+                &nbsp;
+                <hr class="password-change">
+                <a class="btn btn-danger pull-right cancel" href="{{url "TodoList.Index"}}">
+                    <i class="fa fa-times" aria-hidden="true"></i>&nbsp;Cancel</a>
+                <button class="btn btn-primary pull-right" type="submit">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Save password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{template "footer.html" .}}
+
+

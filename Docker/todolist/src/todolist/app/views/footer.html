@@ -1,0 +1,22 @@
+{{if eq .RunMode "dev"}}
+{{template "debug.html" .}}
+{{end}}
+</div><!-- /.container -->
+<footer class="footer">
+    <hr class="hr-footer"/>
+    <div class="container">
+        <img class="pull-left" src="/public/img/gopher-header.png"/>
+    </div>
+</footer>
+
+
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/tether.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/sessvars.js"></script>
+<script src="/public/js/jquery.datetimepicker.full.min.js"></script>
+{{range .moreScripts}}
+<script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+{{end}}
+</body>
+</html>
