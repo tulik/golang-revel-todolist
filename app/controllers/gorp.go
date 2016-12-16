@@ -42,12 +42,14 @@ func InitDB() {
 
 	ScheduledOne := time.Date(2017, time.February, 10, 18, 0, 0, 0, time.UTC)
 	ScheduledOneFormatted := ScheduledOne.Format("2006-01-02 15:04:05")
-	ValueOne := "Get a plane to Indonesia!"
+	ValueOne := "Go application live!"
 	taskOne := models.TodoListItem{1, 0,
 		ScheduledOne,
 		Completion,
 		Timestamp,
-		ScheduledOneFormatted,
+		ScheduledOneFormatted,// TODO: Make an interface for Validate() and then validation can pass in the
+// key prefix ("booking.")
+
 		CompletionFormatted,
 		TimestampFormatted,
 		ValueOne,
@@ -56,7 +58,7 @@ func InitDB() {
 
 	ScheduledTwo := time.Date(2017, time.February, 10, 28, 0, 0, 0, time.UTC)
 	ScheduledTwoFormatted := ScheduledTwo.Format("2006-01-02 15:04:05")
-	ValueTwo := "Get a return plane to London"
+	ValueTwo := "Make it responsive!"
 	taskTwo := models.TodoListItem{2, 0,
 		ScheduledTwo,
 		Completion,
@@ -69,7 +71,7 @@ func InitDB() {
 	}
 	ScheduledThree := time.Date(2017, time.February, 10, 19, 10, 23, 0, time.UTC)
 	ScheduledThreeFormatted := ScheduledThree.Format("2006-01-02 15:04:05")
-	ValueThree := "Meet with Frisca and make love!"
+	ValueThree := "Have fun with Node.js"
 	taskThree := models.TodoListItem{3, 0,
 		ScheduledTwo,
 		Completion,

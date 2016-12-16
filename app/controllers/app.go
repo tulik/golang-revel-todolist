@@ -70,7 +70,7 @@ func (c App) SaveUser(user models.User, verifyPassword string) revel.Result {
 	}
 
 	c.Session["user"] = user.Username
-	c.Flash.Success("Welcome, " + user.Name)
+	c.Flash.Success("Welcome, " + user.Username)
 	return c.Redirect(routes.TodoList.Index())
 }
 

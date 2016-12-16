@@ -7,10 +7,10 @@
 {{if or .errors .flash.error}}
 <div class="alert alert-danger" role="alert">
 	{{if .flash.error}}
-		{{.flash.error}}
+		{{raw .flash.error}}
 	{{end}}
 		{{range .errors}}
-			<li>{{raw .}}</li>
+			<li>{{.}}</li>
 		{{end}}
 	</ul>
 </div>

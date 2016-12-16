@@ -19,10 +19,8 @@ type TodoListItem struct {
 	Done			bool
 }
 
-// TODO: Make an interface for Validate() and then validation can pass in the
-// key prefix ("booking.")
 func (todolistitem TodoListItem) Validate(v *revel.Validation) {
-	v.Required(todolistitem.Value).Message("What you want to do?")
+	v.Required(todolistitem.Value).Message("<strong>What</strong> you want to do?")
 	v.Required(todolistitem.ScheduledFormatted).Message("When do you want to do it?")
 }
 func (t *TodoListItem) MarkAsDone() error {
@@ -34,27 +32,3 @@ func (t *TodoListItem) MarkAsDone() error {
 	t.Done = true
 	return nil
 }
-
-//func (b TodoListItem) String() string {
-//	return fmt.Sprintf("Adding(%s,%s)", b.User, TodoListItem.Value)
-//}
-
-//
-//func (b *TodoListItem) PostGet() error {
-//	var (
-//		obj interface{}
-//		err error
-//	)
-//
-//	err = todolist.Get(User{}, b.UserId)
-//	if err != nil {
-//		return fmt.Errorf("Error loading a booking's user (%d): %s", b.UserId, err)
-//	}
-//	b.User = obj.(*User)
-//
-//	obj, err = exe.Get(TodoListItem{}, TodoListItem.ItemId)
-//	if err != nil {
-//		return fmt.Errorf("Error loading a booking's hotel (%d): %s", TodoListItem.ItemId, err)
-//	}
-//	return nil
-//}

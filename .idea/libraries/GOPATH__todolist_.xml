@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;todolist&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../pi-monte-carlo" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$PROJECT_DIR$/../persona" />
+      <root url="file://$PROJECT_DIR$/../i18n" />
+      <root url="file://$PROJECT_DIR$/../upload" />
+      <root url="file://$PROJECT_DIR$/../validation" />
+      <root url="file://$PROJECT_DIR$/../facebook-oauth2" />
+      <root url="file://$PROJECT_DIR$/../booking" />
+      <root url="file://$PROJECT_DIR$/../chat" />
+      <root url="file://$PROJECT_DIR$/../twitter-oauth" />
+      <root url="file://$PROJECT_DIR$/../myapp" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../pi-monte-carlo" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$PROJECT_DIR$/../persona" />
+      <root url="file://$PROJECT_DIR$/../i18n" />
+      <root url="file://$PROJECT_DIR$/../upload" />
+      <root url="file://$PROJECT_DIR$/../validation" />
+      <root url="file://$PROJECT_DIR$/../facebook-oauth2" />
+      <root url="file://$PROJECT_DIR$/../booking" />
+      <root url="file://$PROJECT_DIR$/../chat" />
+      <root url="file://$PROJECT_DIR$/../twitter-oauth" />
+      <root url="file://$PROJECT_DIR$/../myapp" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

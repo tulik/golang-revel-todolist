@@ -6,16 +6,16 @@
     <div class="col-md-8 offset-md-2">
         {{with $field := field "todolistitem.Value" .}}
         <div class="form-group row">
-            <label for="value" class="col-xs-4 col-form-label"><strong>What do you want to do:</strong></label>
-            <div class="col-xs-8">
+            <label for="value" class="col-xs-3 col-form-label"><strong>What:</strong></label>
+            <div class="col-xs-9">
                 <input class="form-control" type="text"  name="{{$field.Name}}" value="{{$field.Flash}}" id="value">
             </div>
         </div>
         {{end}}
         {{with $field := field "todolistitem.ScheduledFormatted" .}}
         <div class="form-group row">
-            <label for="scheduled" class="col-xs-4 col-form-label"><strong>When do you want to do it:</strong></label>
-            <div class="col-xs-8">
+            <label for="scheduled" class="col-xs-3 col-form-label"><strong>When:</strong></label>
+            <div class="col-xs-9">
                 <input type="text" name="{{$field.Name}}" id="scheduled" class="form-control" value="{{$field.Flash}}" autocomplete="off">
             </div>
         </div>
